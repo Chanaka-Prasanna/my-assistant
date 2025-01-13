@@ -23,7 +23,7 @@ index = pc.Index(INDEX_NAME)
 vector_store = PineconeVectorStore(embedding=embeddings, index=index)
 
 
-loader = TextLoader(file_path="about_me.txt")
+loader = TextLoader(file_path="mychat/about_me.txt")
 docs = loader.load()
 
 
