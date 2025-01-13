@@ -8,5 +8,4 @@ langchain-groq
 langchain-huggingface
 langchain-pinecone
 bs4
-fastapi
-uvicorn
+fastapi[all]
