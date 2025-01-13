@@ -1,0 +1,37 @@
+# Python virtual environment
+myenv/
+venv/
+ENV/
+env/
+
+# Python cache files
+__pycache__/
+/mychat/__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+environment.yml
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+*.log
+.DS_Store
+
+# Pinecone and vector store related
+vector_store/
+
+# Runtime files
+*.pid
+run.txt
