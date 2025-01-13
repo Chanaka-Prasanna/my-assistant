@@ -1,4 +1,4 @@
-from chat import conversational_rag_chain
+from mychat.chat import conversational_rag_chain
 
 response = conversational_rag_chain.invoke(
     {"input": """

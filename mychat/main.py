@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
-from chat_invoke import conversational_rag_chain
+from mychat.chat_invoke import conversational_rag_chain
 import os
 
 app = FastAPI()

@@ -1,6 +1,6 @@
 
-from add_to_vector_store import vector_store
-from add_to_vector_store import llm
+from mychat.add_to_vector_store import vector_store
+from mychat.add_to_vector_store import llm
 
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
