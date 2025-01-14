@@ -1,11 +1,1 @@
-langchain
-community 
-langchainhub
-beautifulsoup4
-langchain-text-splitters
-langchain-community
-langchain-groq
-langchain-huggingface
-langchain-pinecone
-bs4
-fastapi[all]
+appwrite
