@@ -1,0 +1,146 @@
+Personal Information:
+
+Name: D.M Chanaka Prasanna Dissanayaka
+Full Name: Dissanayaka Mudiyanselage Chanaka Prasanna Dissanayaka
+Calling Name: Chanaka
+Birth Date: 2000/11/11
+School: Dewanampiyathissa Central College, Nikawewa, Moragollagama
+Born and Raised in: Kurunegala
+District: Kurunegala
+City: Polpithigama
+Province: North Western Province
+Country: Sri Lanka
+
+
+Academic Achievements:
+
+Ordinary Level Results: 8As, 1B
+Advanced Level Results: 1A, 2Bs, Z-Score - 1.8114
+University: University of Moratuwa
+Faculty: Faculty of Information Technology
+
+Work Experience:
+
+Intern Software Engineer
+Company: Infinity Innovators
+Location: Bambalapitiya, Colombo 03
+
+About Me:
+
+AI/ML Enthusiast | Blogger | Undergraduate at Unniversity of Moratuwa | Technology Explorer
+
+I'm a final-year undergraduate with a passion for Artificial Intelligence and Machine Learning. I love discovering new technologies and experimenting with innovative ideas. My interests lie in researching and exploring cutting-edge advancements in the tech world. As a blogger, I enjoy sharing insights and writing about the latest trends and developments in AI and ML.
+
+Always eager to learn and grow, I'm dedicated to pushing the boundaries of what's possible. Feel free to connect with me to share insights, collaborate on projects, or discuss the latest trends in AI and ML.
+
+Contact Chanaka:
+
+Email: chanakapinfo@gmail.com
+Mobile: +94 7656024490
+
+
+Portfolio:
+Website: https://chanakaprasanna.com
+
+
+Social Links:
+
+GitHub: https://github.com/Chanaka-Prasanna
+LinkedIn: https://www.linkedin.com/in/chanaka-prasanna/
+Medium: https://medium.com/@chanakapinfo
+X: https://x.com/Chanaka7518
+
+
+Blogs:
+
+FutureWiseTech: https://futurewisetech.com/
+Medium: https://medium.com/@chanakapinfo
+
+
+Major Interests:
+
+Artificial Intelligence (AI)
+Machine Learning (ML)
+Deep Learning
+Natural Langage Processing (NLP)
+Computer Vision
+Digital Image Processing
+Software Development
+
+
+Technical Skills:
+
+Programming Languages: Java, Python, JavaScript, TypeScript
+Web Development: Next.js, React, React Native
+Mobile Development: React Native, React Native Expo
+Databases: MySQL, DynamoDB, MongoDB, Appwrite
+AI/ML Tools: Scikit-learn, TensorFlow, Pandas, Matplotlib,TF Serving
+Cloud and DevOps: AWS, Docker, Jenkins, Google Cloud
+UI/UX Design: Figma, Ant Design, ActernityUI
+Others: React Refine, LangChain, GitHub, Node.js, Express.js,
+
+
+Extra-Curricular Activities:
+
+1. CodeRush: Participant (2023, 2022)
+Intra-faculty coding competition organized by INTECS, University of Moratuwa
+2. Tech Triathlon: Participant (2023)
+The ultimate fusion of Engineering, AI, and Design, organized by Rootcode
+
+
+Projects:
+
+1. Chat with PDFs - Intelligent Document Interaction
+Nov 2024
+
+Allows interaction with PDF documents by asking specific questions and receiving context-driven answers.
+Features Google Gemini Pro for embeddings and chat-based interaction.
+
+2. Multilanguage Invoice Extractor
+Oct 2024
+
+Extracts and interprets invoice data in multiple languages using advanced AI techniques.
+Skills: GenAI, Python, Streamlit, Google Gemini, PIL
+
+3. Personal Portfolio Website
+Sep 2024
+
+A well-organized platform showcasing professional journey, skills, and projects.
+Technologies: Next.js, Tailwind CSS, TypeScript
+
+4. Promptopia
+Aug 2024 - Sep 2024
+
+Full-stack web application for sharing and exploring prompts.
+Features Google OAuth, prompt sharing, and session management.
+Technologies: Full-stack development
+
+5. MyImaginator (Ongoing)
+
+An AI-powered web app generating personalized social media captions using Gemini API.
+Technologies: Next.js, Tailwind CSS, TypeScript, Appwrite
+
+6.  MyRide 
+Jan 2024 - June 2024
+
+A comprehensive vehicle management mobile app that simplifies parking, station locating, and service
+access for users.
+
+Built the app using serverless architecture on AWS, leveraging services like Lambda and DynamoDB.
+Implemented a real-time notification system and integrated Google Maps for seamless location-based
+services. Designed and developed user interfaces for park owners and users to manage parks, schedule
+rentals, and view availability. On the backend, initialized APIs for parks, service stations, community services,
+and notifications, while designing the database schema to ensure efficient data management and scalability.
+
+Technologies: AWS, React Native TypeScript, Node js
+
+7. Terra  
+
+A cross-platform video-sharing app with React Native Expo
+The app features a streamlined video uploading process, bookmarking functionality for saving favorite content,
+and a dedicated profile section for personalized user management. Secure authentication and user registration
+were implemented through email sign-in/sign-up. The app delivers a smooth and intuitive experience,
+ensuring easy navigation and engagement across platforms
+
+Technologies: React Native Expo, Tailwind CSS, TypeScript, Appwrite
+
