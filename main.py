@@ -1,26 +1,40 @@
-from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from chat_invoke import conversational_rag_chain
-import os
 
-app = FastAPI()
-# Chanaka
-class ChatRequest(BaseModel):
-    question: str
+# This function will be executed every time your Appwrite function is triggered
+def main(context):
+    # Parse incoming request
+    body = context.req.json  # Retrieve JSON payload from request
+    path = context.req.path  # Get the path of the request
+    
+    # Define response structure
+    def json_response(data, status=200):
+        return context.res.json(data, status)
 
-@app.post("/chat")
-async def chat(request: ChatRequest):
-    question = request.question
+    # Define models and logic
+    class ChatRequest(BaseModel):
+        question: str
 
-    response = conversational_rag_chain.invoke(
-        {"input": question},
-        config={
-            "configurable": {"session_id": "abc123"}
-        },
-    )["answer"]
+    if path == "/chat":
+        try:
+            # Validate and parse incoming request
+            chat_request = ChatRequest(**body)
+            question = chat_request.question
 
-    return response
+            # Call your chain logic here
+            response = conversational_rag_chain.invoke(
+                {"input": question},
+                config={"configurable": {"session_id": "abc123"}}
+            )["answer"]
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+            # Return the result
+            return json_response({"answer": response})
+        except Exception as e:
+            # Handle errors
+            return json_response({"error": str(e)}, status=500)
+    
+    if path == "/":
+        return json_response({"message": "Hello World"})
+    
+    # Default for unsupported paths
+    return json_response({"error": "Not Found"}, status=404)
