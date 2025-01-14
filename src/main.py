@@ -1,39 +1,41 @@
-from appwrite.client import Client
-from appwrite.services.users import Users
-from appwrite.exception import AppwriteException
+from pydantic import BaseModel
+from chat_invoke import conversational_rag_chain
 import os
 
-# This Appwrite function will be executed every time your function is triggered
+# This function will be executed every time your Appwrite function is triggered
 def main(context):
-    # You can use the Appwrite SDK to interact with other services
-    # For this example, we're using the Users service
-    client = (
-        Client()
-        .set_endpoint(os.environ["APPWRITE_FUNCTION_API_ENDPOINT"])
-        .set_project(os.environ["APPWRITE_FUNCTION_PROJECT_ID"])
-        .set_key(context.req.headers["x-appwrite-key"])
-    )
-    users = Users(client)
+    # Parse incoming request
+    body = context.req.json  # Retrieve JSON payload from request
+    path = context.req.path  # Get the path of the request
+    
+    # Define response structure
+    def json_response(data, status=200):
+        return context.res.json(data, status)
 
-    try:
-        response = users.list()
-        # Log messages and errors to the Appwrite Console
-        # These logs won't be seen by your end users
-        context.log("Total users: " + str(response["total"]))
-    except AppwriteException as err:
-        context.error("Could not list users: " + repr(err))
+    # Define models and logic
+    class ChatRequest(BaseModel):
+        question: str
 
-    # The req object contains the request data
-    if context.req.path == "/ping":
-        # Use res object to respond with text(), json(), or binary()
-        # Don't forget to return a response!
-        return context.res.text("Pong")
+    if path == "/chat":
+        try:
+            # Validate and parse incoming request
+            chat_request = ChatRequest(**body)
+            question = chat_request.question
 
-    return context.res.json(
-        {
-            "motto": "Build like a team of hundreds_",
-            "learn": "https://appwrite.io/docs",
-            "connect": "https://appwrite.io/discord",
-            "getInspired": "https://builtwith.appwrite.io",
-        }
-    )
+            # Call your chain logic here
+            response = conversational_rag_chain.invoke(
+                {"input": question},
+                config={"configurable": {"session_id": "abc123"}}
+            )["answer"]
+
+            # Return the result
+            return json_response({"answer": response})
+        except Exception as e:
+            # Handle errors
+            return json_response({"error": str(e)}, status=500)
+    
+    if path == "/":
+        return json_response({"message": "Hello World"})
+    
+    # Default for unsupported paths
+    return json_response({"error": "Not Found"}, status=404)
