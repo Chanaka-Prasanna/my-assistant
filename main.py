@@ -1,6 +1,7 @@
+import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from chat import conversational_rag_chain
+from chat_invoke import conversational_rag_chain
 
 app = FastAPI()
 
@@ -21,3 +22,9 @@ def chat_endpoint(chat_request: ChatRequest):
         return {"answer": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# Get PORT from Render
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Default to 8000 if not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
