@@ -1,40 +1,23 @@
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from chat_invoke import conversational_rag_chain
+from chat import conversational_rag_chain
 
-# This function will be executed every time your Appwrite function is triggered
-def main(context):
-    # Parse incoming request
-    body = context.req.json  # Retrieve JSON payload from request
-    path = context.req.path  # Get the path of the request
-    
-    # Define response structure
-    def json_response(data, status=200):
-        return context.res.json(data, status)
+app = FastAPI()
 
-    # Define models and logic
-    class ChatRequest(BaseModel):
-        question: str
+class ChatRequest(BaseModel):
+    question: str
 
-    if path == "/chat":
-        try:
-            # Validate and parse incoming request
-            chat_request = ChatRequest(**body)
-            question = chat_request.question
+@app.get("/")
+def read_root():
+    return {"message": "Hello World"}
 
-            # Call your chain logic here
-            response = conversational_rag_chain.invoke(
-                {"input": question},
-                config={"configurable": {"session_id": "abc123"}}
-            )["answer"]
-
-            # Return the result
-            return json_response({"answer": response})
-        except Exception as e:
-            # Handle errors
-            return json_response({"error": str(e)}, status=500)
-    
-    if path == "/":
-        return json_response({"message": "Hello World"})
-    
-    # Default for unsupported paths
-    return json_response({"error": "Not Found"}, status=404)
+@app.post("/chat")
+def chat_endpoint(chat_request: ChatRequest):
+    try:
+        response = conversational_rag_chain.invoke(
+            {"input": chat_request.question},
+            config={"configurable": {"session_id": "abc123"}}
+        )["answer"]
+        return {"answer": response}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
