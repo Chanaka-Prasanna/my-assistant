@@ -6,8 +6,9 @@ from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from dotenv import load_dotenv
 
-
+load_dotenv()
 INDEX_NAME = 'mychat'
 
 if not os.environ.get('GROQ_API_KEY'):

@@ -9,4 +9,4 @@ langchain-huggingface
 langchain-pinecone
 bs4
 fastapi[all]
-hypercorn==0.14.0 
+
